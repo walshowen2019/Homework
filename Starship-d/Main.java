@@ -6,7 +6,7 @@ public class Main {
 
         ArrayList<Starship> fleet = new ArrayList<>();
 
-        String[] names = new String[]{"Reliant","Enterprise","Yorktown","Saratoga","Voyager","Discovery","Constitution","Constellation","Grissom","Defiant","Intrepid","Britaan","Stargazer","Yamato","Galaxy","Ambassador","Nimitz","Equinox","Relativity","Challenger"};
+        String[] names = new String[]{"Pillar of Autumn","Prophecy","Song of East","Valiant","Unto the Breach","Aegis Fate","Allegiance","Forward Unto Dawn","Tripping Light","Ready or Not","Calcutta","Halberd","Jericho","Resolute","Do You Feel Lucky?","Callisto","Coral Sea","Pony Express","Two for Flinching","Glamorgan"};
 
         for(int i = 0; i < 20; i++){
             if (i < 5){
