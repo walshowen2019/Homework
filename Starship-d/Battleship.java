@@ -1,35 +1,19 @@
-import java.util.ArrayList;
+public class Battleship extends Starship implements IsOffense {
 
-public class Main {
-
-    public static void main(String[] args) {
-
-        ArrayList<Starship> fleet = new ArrayList<>();
-
-        String[] names = new String[]{"Reliant","Enterprise","Yorktown","Saratoga","Voyager","Discovery","Constitution","Constellation","Grissom","Defiant","Intrepid","Britaan","Stargazer","Yamato","Galaxy","Ambassador","Nimitz","Equinox","Relativity","Challenger"};
-
-        for(int i = 0; i < 20; i++){
-            if (i < 5){
-                fleet.add(new Escort(names[i]));
-
-            }
-            else if (i >= 5 && i < 10){
-                fleet.add(new Frigate(names[i]));
-
-            }
-            else if (i <= 10 && i < 15){
-                fleet.add(new Cruiser(names[i]));
-
-            }
-            else if (i >= 15 && i < 20){
-                fleet.add(new Battleship(names[i]));
-            }
-        }
-
-        for(Starship i : fleet){
-            i.showStats();
-        }
-
+    public Battleship(String newName){
+        name = newName;
+        hull = randomGen(5000,3000);
+        shield = randomGen(2000,1500);
+        beam = randomGen(5000,4000);
+        torp = randomGen(50,40);
     }
 
+    public void showStats() {
+        System.out.println(name);
+        System.out.println("--------------------");
+        System.out.println("Hull: " + hull + " Shields: " + shield + " Beams: " + beam + " Torpedoes: "+ torp);
+        System.out.println();
+    }
 }
+
+
