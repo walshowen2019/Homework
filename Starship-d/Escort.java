@@ -1,35 +1,16 @@
-import java.util.ArrayList;
+public class Escort extends Starship implements IsDefense {
 
-public class Main {
-
-    public static void main(String[] args) {
-
-        ArrayList<Starship> fleet = new ArrayList<>();
-
-        String[] names = new String[]{"Reliant","Enterprise","Yorktown","Saratoga","Voyager","Discovery","Constitution","Constellation","Grissom","Defiant","Intrepid","Britaan","Stargazer","Yamato","Galaxy","Ambassador","Nimitz","Equinox","Relativity","Challenger"};
-
-        for(int i = 0; i < 20; i++){
-            if (i < 5){
-                fleet.add(new Escort(names[i]));
-
-            }
-            else if (i >= 5 && i < 10){
-                fleet.add(new Frigate(names[i]));
-
-            }
-            else if (i <= 10 && i < 15){
-                fleet.add(new Cruiser(names[i]));
-
-            }
-            else if (i >= 15 && i < 20){
-                fleet.add(new Battleship(names[i]));
-            }
-        }
-
-        for(Starship i : fleet){
-            i.showStats();
-        }
-
+    public Escort(String newName){
+        name = newName;
+        hull = randomGen(1250,1000);
+        shield = randomGen(3500,2500);
+        beam = randomGen(3000,2500);
+        torp = randomGen(20,10);
     }
-
+    public void showStats() {
+        System.out.println(name);
+        System.out.println("--------------------");
+        System.out.println("Hull: " + hull + " Shields: " + shield + " Beams: " + beam + " Torpedoes: "+ torp);
+        System.out.println();
+    }
 }
